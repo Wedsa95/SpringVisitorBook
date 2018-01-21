@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Visitor List</title>
+</head>
+<body>
+	<table>
+		<thead>
+			<tr>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Email</th>
+				<th>Phone Number</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="visitor : ${visitors}">
+				<td th:text="${visitor.firstName}"></td>
+				<td th:text="${visitor.lastName}"></td>
+				<td th:text="${visitor.email}"></td>
+				<td th:text="${visitor.phoneNumber}"></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<br />
+	<h2></h2>
+	<form action="/addVisitor" method="POST">
+		First Name <input type="text" id="firstName" name="firstName" /><br />
+		Last Name <input type="text" id="lastName" name="lastName" /><br />
+		Email <input type="text" id="email" name="email" /><br /> Phone
+		Number <input type="text" id="phoneNumber" name="phoneNumber" /><br />
+		<input type="submit" />
+	</form>
+</body>
+</html>
