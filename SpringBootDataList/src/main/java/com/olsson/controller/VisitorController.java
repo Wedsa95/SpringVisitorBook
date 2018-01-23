@@ -23,7 +23,7 @@ public class VisitorController {
     }
 
     @RequestMapping(value = "/addVisitor", method = RequestMethod.POST)
-    public String addCar(@ModelAttribute Visitor visitor) {
+    public String addVisitor(@ModelAttribute Visitor visitor) {
         visitorRepository.save(visitor);
         return "redirect:home";
     }
